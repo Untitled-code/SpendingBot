@@ -42,8 +42,8 @@ logging.debug("Listening...")
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
     msg = bot.reply_to(message, """\
-Привіт! Я бот для роботи з spending.gov.ua. Я можу допомогти тобі отримати транзакції за будь-якій період.
-                                 \n Введіть будь ласка код РОЗПОРЯДНИКА \n (якщо розпорядника немає поставьте - )
+Привіт! Я бот для роботи зі spending.gov.ua. Я можу допомогти тобі отримати транзакції за будь-якій період.
+                                 \n Введіть будь ласка код РОЗПОРЯДНИКА \n (якщо розпорядника немає, поставте - )
 """)
 
     bot.register_next_step_handler(msg, process_name_step)
@@ -63,7 +63,7 @@ def process_name_step(message):
         print(f'Working with with user {chat_id}, who selected company {user_dict[chat_id].name}')
         logging.debug(f'Working with with user {chat_id}, who selected company {user_dict[chat_id].name}')
         msg = bot.reply_to(message, 'Введіть будь ласка код ОТРИМУВАЧА'
-                                    '\n (якщо отримувача немає поставьте - )')  # bot replying for a certain message
+                                    '\n (якщо отримувача немає, поставте - )')  # bot replying for a certain message
         bot.register_next_step_handler(msg, process_name2_step)
     except Exception as e:
         bot.reply_to(message, 'oooops')
@@ -82,7 +82,7 @@ def process_name2_step(message):
         print(f'Working with with user {chat_id}, who selected company {user_dict[chat_id].name}')
         logging.debug(f'Working with with user {chat_id}, who selected company {user_dict[chat_id].name}')
         # msg = bot.reply_to(message, 'Дякую') #bot replying for a certain message
-        bot.send_message(chat_id, 'Введіть будь ласка початкову дату для пошуку ') #bot replying for a certain message
+        bot.send_message(chat_id, 'Введіть, будь ласка, початкову дату для пошуку') #bot replying for a certain message
         now = datetime.datetime.now()  # Get the current date
         bot.send_message(
             message.chat.id,
@@ -127,7 +127,7 @@ def callback_inline(call: CallbackQuery):
         age = date
         user = user_dict[chat_id]
         user.age = age
-        message = bot.reply_to(msg, 'Введіть будь ласка кінцеву дату для пошуку ') #bot replying for a certain message
+        message = bot.reply_to(msg, 'Введіть, будь ласка, кінцеву дату для пошуку') #bot replying for a certain message
         now = datetime.datetime.now()  # Get the current date
         print(now)
         bot.send_message(
