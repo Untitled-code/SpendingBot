@@ -1,4 +1,4 @@
-#!/home/investigator/PycharmProjects/pythonProject/venv/bin/python
+#!/home/investigator/scripts3/pythonProject/venv/bin/python
 # -*- coding: utf-8 -*-
 """
 telegram bot for register_next_step handler with calendar.
@@ -16,7 +16,7 @@ import pandas_count
 import logging
 logging.basicConfig(filename='spending_bot.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-API_TOKEN = ''
+API_TOKEN = '5086846133:AAEq1xvFstnv0Ft9j-Fdzluic2CoieO9iBA'
 
 bot = telebot.TeleBot(API_TOKEN)
 
