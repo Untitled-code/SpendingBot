@@ -1,11 +1,11 @@
-#!/home/investigator/scripts3/pythonProject/venv/bin/python
 # -*- coding: utf-8 -*-
 """
 telegram bot for register_next_step handler with calendar.
 """
 
 import telebot
-from telebot import types
+import os
+#from telebot import types
 import edata_api_nobuttons
 import datetime
 from pathlib import Path
@@ -16,7 +16,7 @@ import pandas_count
 import logging
 logging.basicConfig(filename='spending_bot.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-API_TOKEN = '5086846133:AAEq1xvFstnv0Ft9j-Fdzluic2CoieO9iBA'
+API_TOKEN = os.environ.get('SPENDINGBOT')
 
 bot = telebot.TeleBot(API_TOKEN)
 
