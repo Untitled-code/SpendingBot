@@ -1,5 +1,5 @@
 numpy
 pandas
-pyTelegramBotAPI==4.8
-requests==2.28
-telebot-calendar==1.2
+pyTelegramBotAPI
+requests
+telebot-calendar
