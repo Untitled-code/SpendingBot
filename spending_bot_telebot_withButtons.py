@@ -14,7 +14,7 @@ from telebot.types import ReplyKeyboardRemove, CallbackQuery
 import logging
 logging.basicConfig(filename='spending_bot.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-API_TOKEN = '5086846133:AAEq1xvFstnv0Ft9j-Fdzluic2CoieO9iBA'
+API_TOKEN = ''
 
 bot = telebot.TeleBot(API_TOKEN)
 
